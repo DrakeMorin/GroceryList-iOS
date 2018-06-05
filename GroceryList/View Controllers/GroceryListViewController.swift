@@ -9,8 +9,10 @@
 import UIKit
 
 class GroceryListViewController: UIViewController {
-    @IBOutlet weak var groceriesTableView: UITableView!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var groceriesTableView: UITableView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var emptyStateImage: UIImageView!
+    @IBOutlet private weak var emptyStateLabel: UILabel!
 
     private let viewModel = GroceryListViewModel()
 }
@@ -35,6 +37,12 @@ extension GroceryListViewController {
 
 private extension GroceryListViewController {
     func bindViewModel() {
+        viewModel.isEmptyStateHidden.bind(to: emptyStateImage.reactive.isHidden)
+        viewModel.isEmptyStateHidden.bind(to: emptyStateLabel.reactive.isHidden)
+        viewModel.isEmptyStateHidden
+            .map { !$0 }
+            .bind(to: groceriesTableView.reactive.isHidden)
+
         viewModel.shouldReloadUI
             .observeNext {
                 self.groceriesTableView.reloadData()
@@ -67,6 +75,10 @@ extension GroceryListViewController: UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        if viewModel.isListEmpty() {
+            return 1
+        }
+        
         return viewModel.checkedItems.count == 0 ? 1 : 2
     }
 
@@ -89,17 +101,11 @@ extension GroceryListViewController: UITableViewDataSource {
 
 extension GroceryListViewController: UITableViewDelegate { }
 
-// MARK: - AddGroceryItems Delegate
+// MARK: - AddFoodItems Delegate
 
 extension GroceryListViewController: AddFoodItemsViewControllerDelegate {
     func addFoodItemsViewController(_ controller: AddFoodItemsViewController, didAdd items: [FoodItem]) {
-        var groceryItems = [GroceryItem]()
-
-        for item in items {
-            groceryItems.append(GroceryItem(name: item.name, quantity: item.quantity))
-        }
-
-        viewModel.addItems(groceryItems)
+        viewModel.addItems(convertToGroceryItems(items))
     }
 }
 
@@ -111,24 +117,55 @@ extension GroceryListViewController: GroceryItemTableViewCellDelegate {
     }
 }
 
+// MARK: - RecipeOverview Delegate
+
+extension GroceryListViewController: RecipeOverviewViewControllerDelegate {
+    func recipeOverviewViewController(_ controller: RecipeOverviewViewController, didAddToList recipe: Recipe) {
+        viewModel.addItems(convertToGroceryItems(Array(recipe.recipeItems)))
+    }
+}
+
+// MARK: - Navigation
+
+extension GroceryListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        view.endEditing(true)
+
+        if segue.identifier == R.segue.groceryListViewController.groceryListShowAddFoodItems.identifier {
+            guard let navigationController = segue.destination as? UINavigationController,
+                let addFoodItemsViewController = navigationController.topViewController as? AddFoodItemsViewController
+                else { return }
+
+            addFoodItemsViewController.delegate = self
+        } else if segue.identifier == R.segue.groceryListViewController.showRecipeOverview.identifier {
+            guard let navigationController = segue.destination as? UINavigationController,
+                let recipeOverviewController = navigationController.topViewController as? RecipeOverviewViewController
+                else { return }
+
+            recipeOverviewController.delegate = self
+        }
+    }
+}
+
 // MARK: IBActions
 
 private extension GroceryListViewController {
     @IBAction func deleteCheckedItems(_ sender: Any) {
         viewModel.deleteCheckedItems()
     }
+}
 
-    @IBAction func addGroceryItem(_ sender: Any) {
-        guard let navigationController = R.storyboard.addFoodItems().instantiateInitialViewController() as? UINavigationController,
-            let addFoodItemsViewController = navigationController.topViewController as? AddFoodItemsViewController
-            else { return }
+// MARK: - Helper Functions
 
-        addFoodItemsViewController.delegate = self
+private extension GroceryListViewController {
+    func convertToGroceryItems(_ foodItems: [FoodItem]) -> [GroceryItem] {
+        var groceryItems = [GroceryItem]()
 
-        present(navigationController, animated: true)
-    }
+        for item in foodItems {
+            groceryItems.append(GroceryItem(name: item.name, quantity: item.quantity))
+        }
 
-    @IBAction func openRecipes(_ sender: Any) {
-
+        return groceryItems
     }
 }

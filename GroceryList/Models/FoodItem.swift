@@ -1,5 +1,5 @@
 //
-//  RecipeItem.swift
+//  FoodItem.swift
 //  GroceryList
 //
 //  Created by Drake Morin on 2018-06-03.
@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Gloss
 
 class FoodItem: Object {
     @objc dynamic var name = "ItemName"
@@ -19,5 +20,15 @@ class FoodItem: Object {
         self.name = name
         self.quantity = quantity
     }
-    // TODO JSON Decoding
+
+    convenience init(json: JSON) {
+        self.init()
+        
+        guard let name: String = "name" <~~ json,
+            let quantity: Int = "quantity" <~~ json
+            else { return }
+
+        self.name = name
+        self.quantity = quantity
+    }
 }

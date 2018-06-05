@@ -13,7 +13,7 @@ import RealmSwift
 
 class GroceryListViewModel {
     let shouldReloadUI = SafePublishSubject<Void>()
-    let isEmptyStateHidden = Observable<Bool>(true)
+    let isEmptyStateHidden = Observable<Bool>(false)
 
     lazy var uncheckedItems: [GroceryItem] = {
         let realm = try! Realm()
@@ -94,6 +94,11 @@ extension GroceryListViewModel {
 
         shouldReloadUI.next()
     }
+
+    func isListEmpty() -> Bool {
+        isEmptyStateHidden.value = !(uncheckedItems.isEmpty && checkedItems.isEmpty)
+        return !isEmptyStateHidden.value
+    }
 }
 
 // MARK: - Private Helper Functions
@@ -107,7 +112,7 @@ private extension GroceryListViewModel {
                 realm.create(GroceryItem.self, value: item, update: false)
             }
         } catch {
-            debugPrint("Error adding to Realm")
+            debugPrint("Error adding GroceryItem to Realm")
         }
     }
 
@@ -120,7 +125,7 @@ private extension GroceryListViewModel {
                 groceryItem.isDirty = isDirty
             }
         } catch {
-            debugPrint("Error updating an item in Realm")
+            debugPrint("Error updating GroceryItem in Realm")
         }
     }
 
@@ -129,10 +134,10 @@ private extension GroceryListViewModel {
             let realm = try Realm()
 
             try realm.write {
-                realm.delete(groceryItem)
+                realm.delete(realm.objects(GroceryItem.self).filter("id == '\(groceryItem.id)'"))
             }
         } catch {
-            debugPrint("Error deleting item from Realm")
+            debugPrint("Error deleting GroceryItem from Realm")
         }
     }
 }

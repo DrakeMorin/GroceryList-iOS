@@ -1,5 +1,5 @@
 //
-//  AddGroceryItemsViewController.swift
+//  AddFoodItemsViewController.swift
 //  GroceryList
 //
 //  Created by Drake Morin on 2018-06-03.
@@ -26,6 +26,7 @@ extension AddFoodItemsViewController {
         super.viewDidLoad()
 
         bindViewModel()
+        itemTextView.becomeFirstResponder()
     }
 }
 
@@ -41,8 +42,14 @@ extension AddFoodItemsViewController {
 
 private extension AddFoodItemsViewController {
     @IBAction func saveItems(_ sender: Any) {
+        itemTextView.resignFirstResponder()
         let items = viewModel.parseInputToItems()
         delegate?.addFoodItemsViewController(self, didAdd: items)
+        self.dismiss(animated: true)
+    }
+
+    @IBAction func close(_ sender: Any) {
+        itemTextView.resignFirstResponder()
         self.dismiss(animated: true)
     }
 }

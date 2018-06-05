@@ -1,5 +1,5 @@
 //
-//  AddGroceryItemsViewModel.swift
+//  AddFoodItemsViewModel.swift
 //  GroceryList
 //
 //  Created by Drake Morin on 2018-06-03.

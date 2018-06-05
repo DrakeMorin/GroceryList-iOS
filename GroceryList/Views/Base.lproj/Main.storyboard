@@ -18,6 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_box" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-Bn-yzQ">
+                                <rect key="frame" x="87.5" y="259" width="200" height="149"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your grocery list is empty! Tap the + button to add to it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-Vr-ohk">
+                                <rect key="frame" x="4" y="424" width="367" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-WM-uPT">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
@@ -32,7 +41,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eXj-39-ydS"/>
                                     <barButtonItem title="Open Recipes" id="yKk-5R-x5Y">
                                         <connections>
-                                            <action selector="openRecipes:" destination="BYZ-38-t0r" id="wSf-K3-c45"/>
+                                            <segue destination="zE9-9Y-213" kind="show" identifier="showRecipeOverview" id="MEK-XT-8BC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -47,26 +56,33 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="a4Z-Bn-yzQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0h4-vz-jhj"/>
                             <constraint firstItem="KHC-ND-rPX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0zg-az-YSx"/>
                             <constraint firstItem="ISq-WM-uPT" firstAttribute="top" secondItem="KHC-ND-rPX" secondAttribute="bottom" id="5vA-oD-H79"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHC-ND-rPX" secondAttribute="trailing" id="9FS-wH-wlv"/>
+                            <constraint firstItem="Ema-Vr-ohk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="9cP-ox-C9C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ISq-WM-uPT" secondAttribute="bottom" id="JVe-nZ-IzU"/>
                             <constraint firstItem="52a-WD-wSe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TEy-Hs-2cy"/>
+                            <constraint firstItem="Ema-Vr-ohk" firstAttribute="top" secondItem="a4Z-Bn-yzQ" secondAttribute="bottom" constant="16" id="XBc-h2-ViJ"/>
                             <constraint firstItem="ISq-WM-uPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XsF-rN-sXN"/>
+                            <constraint firstItem="a4Z-Bn-yzQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h2f-Ig-RWR"/>
                             <constraint firstAttribute="trailing" secondItem="ISq-WM-uPT" secondAttribute="trailing" id="hiM-UL-ijL"/>
                             <constraint firstItem="52a-WD-wSe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="laV-Jv-eeH"/>
                             <constraint firstItem="KHC-ND-rPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vyc-Go-Y09"/>
+                            <constraint firstAttribute="trailing" secondItem="Ema-Vr-ohk" secondAttribute="trailing" constant="4" id="yZa-fu-PI4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grocery List" id="UWc-mt-rKu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B1X-HP-42C">
                             <connections>
-                                <action selector="addGroceryItem:" destination="BYZ-38-t0r" id="iAs-TC-yKJ"/>
+                                <segue destination="PcQ-hL-lTk" kind="presentation" identifier="groceryListShowAddFoodItems" id="QaR-6t-kHC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyStateImage" destination="a4Z-Bn-yzQ" id="cFS-yt-eff"/>
+                        <outlet property="emptyStateLabel" destination="Ema-Vr-ohk" id="ouW-ws-rXM"/>
                         <outlet property="groceriesTableView" destination="KHC-ND-rPX" id="cu5-Uu-QjC"/>
                         <outlet property="loadingIndicator" destination="52a-WD-wSe" id="ybL-6h-kl9"/>
                     </connections>
@@ -74,6 +90,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834" y="-581"/>
+        </scene>
+        <!--RecipeOverview-->
+        <scene sceneID="6EN-aq-NHS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeOverview" id="zE9-9Y-213" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Dz-2Q-CkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="-309"/>
+        </scene>
+        <!--AddFoodItems-->
+        <scene sceneID="zVM-g5-mCK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddFoodItems" id="PcQ-hL-lTk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKt-17-qgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="-793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FPp-Wf-jGV">
@@ -94,4 +126,7 @@
             <point key="canvasLocation" x="-90.400000000000006" y="-580.65967016491754"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="empty_box" width="200" height="149"/>
+    </resources>
 </document>

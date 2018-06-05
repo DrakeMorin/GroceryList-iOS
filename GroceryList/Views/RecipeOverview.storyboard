@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WxN-8U-eEc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipes-->
+        <scene sceneID="wBg-zk-Adq">
+            <objects>
+                <viewController id="pcc-8g-jpE" customClass="RecipeOverviewViewController" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvr-OL-atY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No recipes found! Tap the + button to create a recipe." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0V-1P-pZy">
+                                <rect key="frame" x="4" y="424" width="367" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_box" translatesAutoresizingMaskIntoConstraints="NO" id="Upe-Mk-9CB">
+                                <rect key="frame" x="87.5" y="259" width="200" height="149"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yxl-2X-I8h">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Upe-Mk-9CB" firstAttribute="centerX" secondItem="qvr-OL-atY" secondAttribute="centerX" id="AyQ-PQ-Omh"/>
+                            <constraint firstItem="i0V-1P-pZy" firstAttribute="top" secondItem="Upe-Mk-9CB" secondAttribute="bottom" constant="16" id="Dt5-Ta-YTI"/>
+                            <constraint firstAttribute="trailing" secondItem="i0V-1P-pZy" secondAttribute="trailing" constant="4" id="GBh-52-To4"/>
+                            <constraint firstItem="Upe-Mk-9CB" firstAttribute="centerY" secondItem="qvr-OL-atY" secondAttribute="centerY" id="LKd-1c-6FU"/>
+                            <constraint firstItem="i0V-1P-pZy" firstAttribute="leading" secondItem="thy-a2-54a" secondAttribute="leading" constant="4" id="UgV-RO-hOY"/>
+                            <constraint firstItem="thy-a2-54a" firstAttribute="bottom" secondItem="Yxl-2X-I8h" secondAttribute="bottom" id="VYc-gp-60v"/>
+                            <constraint firstItem="Yxl-2X-I8h" firstAttribute="top" secondItem="thy-a2-54a" secondAttribute="top" id="oG7-kS-oQA"/>
+                            <constraint firstItem="thy-a2-54a" firstAttribute="trailing" secondItem="Yxl-2X-I8h" secondAttribute="trailing" id="yii-CQ-d7m"/>
+                            <constraint firstItem="Yxl-2X-I8h" firstAttribute="leading" secondItem="thy-a2-54a" secondAttribute="leading" id="zua-cu-A3M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="thy-a2-54a"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipes" id="nYC-6E-HQe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ddt-wj-1G9">
+                            <connections>
+                                <action selector="close:" destination="pcc-8g-jpE" id="zsb-vl-dtd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MLt-Cn-vmN">
+                            <connections>
+                                <action selector="addRecipe:" destination="pcc-8g-jpE" id="Wgi-MQ-2qf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyStateImage" destination="Upe-Mk-9CB" id="nSh-tu-zb2"/>
+                        <outlet property="emptyStateLabel" destination="i0V-1P-pZy" id="exH-Oj-JwJ"/>
+                        <outlet property="recipesTableView" destination="Yxl-2X-I8h" id="bcg-Yr-iIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3XL-5h-rtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="77.811094452773617"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7qv-FS-0At">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WxN-8U-eEc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sn8-nc-0bG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pcc-8g-jpE" kind="relationship" relationship="rootViewController" id="ojq-bv-yVV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7L-8V-rVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="77.811094452773617"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty_box" width="200" height="149"/>
+    </resources>
+</document>

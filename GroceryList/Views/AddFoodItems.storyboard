@@ -18,24 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="5 oranges" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mh7-A9-Cmc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please add your grocery items, one per line. Quantity then item name." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMx-0b-x7N">
+                                <rect key="frame" x="8" y="72" width="359" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mh7-A9-Cmc">
+                                <rect key="frame" x="0.0" y="121" width="375" height="546"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r51-3w-k2V" firstAttribute="trailing" secondItem="mh7-A9-Cmc" secondAttribute="trailing" id="7Tn-Tx-rJ5"/>
+                            <constraint firstItem="mh7-A9-Cmc" firstAttribute="top" secondItem="PMx-0b-x7N" secondAttribute="bottom" constant="8" id="8yp-EG-8YZ"/>
+                            <constraint firstItem="r51-3w-k2V" firstAttribute="trailing" secondItem="PMx-0b-x7N" secondAttribute="trailing" constant="8" id="OuV-7m-NHB"/>
+                            <constraint firstItem="PMx-0b-x7N" firstAttribute="top" secondItem="r51-3w-k2V" secondAttribute="top" constant="8" id="VUg-Gd-9Yc"/>
+                            <constraint firstItem="PMx-0b-x7N" firstAttribute="leading" secondItem="r51-3w-k2V" secondAttribute="leading" constant="8" id="bWx-DR-hoS"/>
                             <constraint firstItem="r51-3w-k2V" firstAttribute="bottom" secondItem="mh7-A9-Cmc" secondAttribute="bottom" id="jVV-9e-aQP"/>
-                            <constraint firstItem="mh7-A9-Cmc" firstAttribute="top" secondItem="r51-3w-k2V" secondAttribute="top" id="rL2-X9-I4H"/>
                             <constraint firstItem="mh7-A9-Cmc" firstAttribute="leading" secondItem="r51-3w-k2V" secondAttribute="leading" id="sv8-IX-32a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r51-3w-k2V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Items" id="dmc-sa-KKb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="8lZ-iX-wys">
+                            <connections>
+                                <action selector="close:" destination="P9k-FZ-rdq" id="PKZ-Cl-L00"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="s4n-pk-j1q">
                             <connections>
                                 <action selector="saveItems:" destination="P9k-FZ-rdq" id="zqe-Gl-FQw"/>

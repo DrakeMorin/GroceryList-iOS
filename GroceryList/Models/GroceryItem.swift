@@ -49,7 +49,6 @@ class GroceryItem: Object {
         return "id"
     }
 
-    // TODO: Test if overriding this breaks Realm
     static func ==(lhs: GroceryItem, rhs: GroceryItem) -> Bool {
         return lhs.name.lowercased() == rhs.name.lowercased() && lhs.isChecked == rhs.isChecked
     }
