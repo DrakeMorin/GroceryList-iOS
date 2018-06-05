@@ -19,27 +19,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="888" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-YD-cbt">
-                        <rect key="frame" x="4" y="11" width="42" height="30"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="888" placeholder="Amt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Trv-YD-cbt">
+                        <rect key="frame" x="8" y="11.5" width="46" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="42" id="e30-PO-rfB"/>
+                            <constraint firstAttribute="width" constant="46" id="e30-PO-rfB"/>
                         </constraints>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Oranges" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myV-vZ-jJ9">
-                        <rect key="frame" x="54" y="11" width="262" height="30"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Oranges" placeholder="Ingredient Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myV-vZ-jJ9">
+                        <rect key="frame" x="58" y="11.5" width="258" height="21"/>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="myV-vZ-jJ9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="4" id="0rD-id-c1v"/>
-                    <constraint firstItem="Trv-YD-cbt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="408-P0-0lL"/>
-                    <constraint firstItem="myV-vZ-jJ9" firstAttribute="leading" secondItem="Trv-YD-cbt" secondAttribute="trailing" constant="8" id="5dv-gN-l7E"/>
-                    <constraint firstItem="Trv-YD-cbt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="4" id="Mah-zi-e31"/>
+                    <constraint firstItem="myV-vZ-jJ9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0rD-id-c1v"/>
+                    <constraint firstItem="Trv-YD-cbt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="408-P0-0lL"/>
+                    <constraint firstItem="myV-vZ-jJ9" firstAttribute="leading" secondItem="Trv-YD-cbt" secondAttribute="trailing" constant="4" id="5dv-gN-l7E"/>
+                    <constraint firstItem="Trv-YD-cbt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Mah-zi-e31"/>
                     <constraint firstAttribute="trailing" secondItem="myV-vZ-jJ9" secondAttribute="trailing" constant="4" id="URp-jf-MrV"/>
                 </constraints>
             </tableViewCellContentView>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipes-->
+        <!--All Recipes-->
         <scene sceneID="wBg-zk-Adq">
             <objects>
                 <viewController id="pcc-8g-jpE" customClass="RecipeOverviewViewController" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="thy-a2-54a"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipes" id="nYC-6E-HQe">
+                    <navigationItem key="navigationItem" title="All Recipes" id="nYC-6E-HQe">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ddt-wj-1G9">
                             <connections>
                                 <action selector="close:" destination="pcc-8g-jpE" id="zsb-vl-dtd"/>

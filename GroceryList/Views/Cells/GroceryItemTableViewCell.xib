@@ -33,19 +33,19 @@
                             <action selector="toggleChecked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3DW-bp-0IO"/>
                         </connections>
                     </button>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="888" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-Ph-biL">
-                        <rect key="frame" x="36" y="11" width="42" height="30"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="888" placeholder="Amt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-Ph-biL">
+                        <rect key="frame" x="36" y="11.5" width="46" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="42" id="UUH-ru-yHJ"/>
+                            <constraint firstAttribute="width" constant="46" id="UUH-ru-yHJ"/>
                         </constraints>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Grocery Item Name!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mr-AR-tLC">
-                        <rect key="frame" x="86" y="11" width="230" height="30"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Grocery Item Name!" placeholder="Grocery Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mr-AR-tLC">
+                        <rect key="frame" x="86" y="11.5" width="230" height="21"/>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
@@ -53,10 +53,10 @@
                     <constraint firstItem="F32-vX-IDP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Q3-ks-3zH"/>
                     <constraint firstAttribute="trailing" secondItem="3mr-AR-tLC" secondAttribute="trailing" constant="4" id="Fr1-WI-6su"/>
                     <constraint firstItem="F32-vX-IDP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="PoM-70-H4R"/>
-                    <constraint firstItem="3mr-AR-tLC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="4" id="XSL-ps-hTO"/>
-                    <constraint firstItem="ChQ-Ph-biL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="4" id="XZZ-ux-zFe"/>
+                    <constraint firstItem="3mr-AR-tLC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XSL-ps-hTO"/>
+                    <constraint firstItem="ChQ-Ph-biL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XZZ-ux-zFe"/>
                     <constraint firstItem="ChQ-Ph-biL" firstAttribute="leading" secondItem="F32-vX-IDP" secondAttribute="trailing" constant="8" id="k3C-f6-eUA"/>
-                    <constraint firstItem="3mr-AR-tLC" firstAttribute="leading" secondItem="ChQ-Ph-biL" secondAttribute="trailing" constant="8" id="skF-FY-bTa"/>
+                    <constraint firstItem="3mr-AR-tLC" firstAttribute="leading" secondItem="ChQ-Ph-biL" secondAttribute="trailing" constant="4" id="skF-FY-bTa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
