@@ -19,7 +19,6 @@
 		0BFF034B20C47B8700AF7D54 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF034920C47B8700AF7D54 /* GroceryItemTableViewCell.swift */; };
 		0BFF034C20C47B8700AF7D54 /* GroceryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF034A20C47B8700AF7D54 /* GroceryItemTableViewCell.xib */; };
 		0BFF034E20C47BBA00AF7D54 /* GroceryItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF034D20C47BBA00AF7D54 /* GroceryItemCellViewModel.swift */; };
-		0BFF035120C47FD900AF7D54 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF035020C47FD900AF7D54 /* R.generated.swift */; };
 		0BFF035320C494BD00AF7D54 /* AddFoodItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF035220C494BD00AF7D54 /* AddFoodItems.storyboard */; };
 		0BFF035520C4B76600AF7D54 /* AddFoodItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF035420C4B76600AF7D54 /* AddFoodItemsViewController.swift */; };
 		0BFF035720C4B87E00AF7D54 /* AddFoodItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF035620C4B87E00AF7D54 /* AddFoodItemsViewModel.swift */; };
@@ -35,6 +34,7 @@
 		0BFF036C20C5F89300AF7D54 /* FoodItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF036A20C5F89300AF7D54 /* FoodItemTableViewCell.xib */; };
 		0BFF036E20C5FA8700AF7D54 /* FoodItemTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF036D20C5FA8700AF7D54 /* FoodItemTableCellViewModel.swift */; };
 		A679DCB0F8D5D16CF8B4C029 /* Pods_GroceryList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6130F3FB74D902F05A014BF5 /* Pods_GroceryList.framework */; };
+		DEDD43C0218E69E600DE6C1C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD43BF218E69E600DE6C1C /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		0BFF034920C47B8700AF7D54 /* GroceryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewCell.swift; sourceTree = "<group>"; };
 		0BFF034A20C47B8700AF7D54 /* GroceryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroceryItemTableViewCell.xib; sourceTree = "<group>"; };
 		0BFF034D20C47BBA00AF7D54 /* GroceryItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemCellViewModel.swift; sourceTree = "<group>"; };
-		0BFF035020C47FD900AF7D54 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0BFF035220C494BD00AF7D54 /* AddFoodItems.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddFoodItems.storyboard; sourceTree = "<group>"; };
 		0BFF035420C4B76600AF7D54 /* AddFoodItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodItemsViewController.swift; sourceTree = "<group>"; };
 		0BFF035620C4B87E00AF7D54 /* AddFoodItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodItemsViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		34A3234A8E98E60D3C6036A5 /* Pods-GroceryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.debug.xcconfig"; sourceTree = "<group>"; };
 		6130F3FB74D902F05A014BF5 /* Pods_GroceryList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroceryList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5651ABCCAA75455DD07C653 /* Pods-GroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.release.xcconfig"; sourceTree = "<group>"; };
+		DEDD43BF218E69E600DE6C1C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				0BFF033E20C4600400AF7D54 /* View Controllers */,
 				0BFF033D20C45FFD00AF7D54 /* View Models */,
 				0BFF032820C45D9C00AF7D54 /* AppDelegate.swift */,
-				0BFF035020C47FD900AF7D54 /* R.generated.swift */,
+				DEDD43BF218E69E600DE6C1C /* R.generated.swift */,
 				0BFF032F20C45D9D00AF7D54 /* Assets.xcassets */,
 				0BFF033120C45D9D00AF7D54 /* LaunchScreen.storyboard */,
 				0BFF033420C45D9D00AF7D54 /* Info.plist */,
@@ -289,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
 		};
 		5985819B124EBB36BA1876AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -353,13 +353,13 @@
 				0BFF036E20C5FA8700AF7D54 /* FoodItemTableCellViewModel.swift in Sources */,
 				0BFF035E20C583D500AF7D54 /* RecipeOverviewViewModel.swift in Sources */,
 				0BFF036120C58E8500AF7D54 /* RecipeTableViewCell.swift in Sources */,
-				0BFF035120C47FD900AF7D54 /* R.generated.swift in Sources */,
 				0BFF034220C4604100AF7D54 /* GroceryListViewModel.swift in Sources */,
 				0BFF034820C46C2A00AF7D54 /* FoodItem.swift in Sources */,
 				0BFF034420C4609400AF7D54 /* GroceryItem.swift in Sources */,
 				0BFF032920C45D9C00AF7D54 /* AppDelegate.swift in Sources */,
 				0BFF035C20C583C400AF7D54 /* RecipeOverviewViewController.swift in Sources */,
 				0BFF034620C46B0E00AF7D54 /* Recipe.swift in Sources */,
+				DEDD43C0218E69E600DE6C1C /* R.generated.swift in Sources */,
 				0BFF035720C4B87E00AF7D54 /* AddFoodItemsViewModel.swift in Sources */,
 				0BFF034E20C47BBA00AF7D54 /* GroceryItemCellViewModel.swift in Sources */,
 				0BFF036820C5F52900AF7D54 /* RecipeDetailViewModel.swift in Sources */,
