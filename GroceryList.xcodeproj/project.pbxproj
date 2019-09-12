@@ -34,7 +34,7 @@
 		0BFF036C20C5F89300AF7D54 /* FoodItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF036A20C5F89300AF7D54 /* FoodItemTableViewCell.xib */; };
 		0BFF036E20C5FA8700AF7D54 /* FoodItemTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF036D20C5FA8700AF7D54 /* FoodItemTableCellViewModel.swift */; };
 		A679DCB0F8D5D16CF8B4C029 /* Pods_GroceryList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6130F3FB74D902F05A014BF5 /* Pods_GroceryList.framework */; };
-		DEDD43C0218E69E600DE6C1C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD43BF218E69E600DE6C1C /* R.generated.swift */; };
+		DE36CD2E2329D0A9003D0C29 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36CD2D2329D0A9003D0C29 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,7 @@
 		34A3234A8E98E60D3C6036A5 /* Pods-GroceryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.debug.xcconfig"; sourceTree = "<group>"; };
 		6130F3FB74D902F05A014BF5 /* Pods_GroceryList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroceryList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5651ABCCAA75455DD07C653 /* Pods-GroceryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.release.xcconfig"; sourceTree = "<group>"; };
-		DEDD43BF218E69E600DE6C1C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		DE36CD2D2329D0A9003D0C29 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,6 @@
 				0BFF033E20C4600400AF7D54 /* View Controllers */,
 				0BFF033D20C45FFD00AF7D54 /* View Models */,
 				0BFF032820C45D9C00AF7D54 /* AppDelegate.swift */,
-				DEDD43BF218E69E600DE6C1C /* R.generated.swift */,
 				0BFF032F20C45D9D00AF7D54 /* Assets.xcassets */,
 				0BFF033120C45D9D00AF7D54 /* LaunchScreen.storyboard */,
 				0BFF033420C45D9D00AF7D54 /* Info.plist */,
@@ -129,6 +128,7 @@
 		0BFF033D20C45FFD00AF7D54 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE36CD2D2329D0A9003D0C29 /* R.generated.swift */,
 				0BFF034120C4604100AF7D54 /* GroceryListViewModel.swift */,
 				0BFF035620C4B87E00AF7D54 /* AddFoodItemsViewModel.swift */,
 				0BFF035D20C583D500AF7D54 /* RecipeOverviewViewModel.swift */,
@@ -284,12 +284,14 @@
 			files = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputPaths = (
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		5985819B124EBB36BA1876AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -359,7 +361,7 @@
 				0BFF032920C45D9C00AF7D54 /* AppDelegate.swift in Sources */,
 				0BFF035C20C583C400AF7D54 /* RecipeOverviewViewController.swift in Sources */,
 				0BFF034620C46B0E00AF7D54 /* Recipe.swift in Sources */,
-				DEDD43C0218E69E600DE6C1C /* R.generated.swift in Sources */,
+				DE36CD2E2329D0A9003D0C29 /* R.generated.swift in Sources */,
 				0BFF035720C4B87E00AF7D54 /* AddFoodItemsViewModel.swift in Sources */,
 				0BFF034E20C47BBA00AF7D54 /* GroceryItemCellViewModel.swift in Sources */,
 				0BFF036820C5F52900AF7D54 /* RecipeDetailViewModel.swift in Sources */,

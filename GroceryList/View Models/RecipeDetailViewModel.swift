@@ -16,7 +16,7 @@ class RecipeDetailViewModel {
     var ingredients = [FoodItem]()
     let isEmptyStateHidden = Observable<Bool>(false)
     let shouldRefreshUI = SafePublishSubject<Void>()
-    // TODO: Implement a, is AddIngredientsToRecipe enabled observable!
+    // TODO: Implement a, isAddIngredientsToRecipe enabled observable!
 
     private let recipeID: String
 
